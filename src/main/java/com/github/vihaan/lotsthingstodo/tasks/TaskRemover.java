@@ -1,6 +1,6 @@
 package com.github.vihaan.lotsthingstodo.tasks;
 
-public class TaskRemover {
+class TaskRemover {
 
     boolean removeTask(){
         return true;

@@ -1,5 +1,7 @@
 package com.github.vihaan.lotsthingstodo.tasks;
 
+import com.github.vihaan.lotsthingstodo.categories.Category;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -14,9 +16,12 @@ public class Task {
     private final LocalDate creationDate;
     private final LocalDate deadline;
 
+    private final Category category;
+
     public Task(String title, String description,
                 Severity severity, Status status,
-                int progress, LocalDate deadline) {
+                int progress, LocalDate deadline,
+                Category category) {
         this.title = title;
         this.description = description;
         this.severity = severity;
@@ -24,6 +29,7 @@ public class Task {
         this.progress = progress;
         creationDate = LocalDate.now();
         this.deadline = deadline;
+        this.category = category;
     }
 
     public String getTitle() {
@@ -52,6 +58,10 @@ public class Task {
 
     public LocalDate getDeadline() {
         return deadline;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     @Override
